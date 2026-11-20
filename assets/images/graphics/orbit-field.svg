@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" fill="none">
+  <defs><linearGradient id="light" x1="160" y1="850" x2="810" y2="150" gradientUnits="userSpaceOnUse"><stop stop-color="#3376ff" stop-opacity="0"/><stop offset=".35" stop-color="#5680ff" stop-opacity=".65"/><stop offset=".7" stop-color="#a46aff"/><stop offset="1" stop-color="#7536e8" stop-opacity="0"/></linearGradient></defs>
+  <g stroke="url(#light)" transform="rotate(-32 500 500)">
+    <ellipse cx="500" cy="500" rx="470" ry="244" stroke-width="1.5"/>
+    <ellipse cx="500" cy="500" rx="430" ry="208" stroke-width=".75"/>
+    <ellipse cx="500" cy="500" rx="496" ry="272" stroke-width=".5"/>
+    <path d="M30 500h38m864 0h38M500 256v22m0 444v22" stroke-width="2"/>
+  </g>
+</svg>
