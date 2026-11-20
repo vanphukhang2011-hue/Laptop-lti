@@ -1,0 +1,345 @@
+/* Deep black canvas, blue for action/information, indigo for atmosphere. */
+:root {
+  --canvas: #06070d;
+  --surface: #10131f;
+  --surface-raised: #191a30;
+  --text: #eef0ff;
+  --text-muted: #b8bfd8;
+  --action: #3c55dd;
+  --action-hover: #405be5;
+  --info: #9baeff;
+  --mood: #32205b;
+  /* Compatibility roles used by the original components. */
+  --paper: var(--text);
+  --ink: var(--canvas);
+  --gray: var(--surface);
+  --red: var(--info);
+  color-scheme: dark;
+}
+body {
+  background: var(--canvas);
+  color: var(--text);
+}
+::selection {
+  background: var(--action);
+  color: var(--text);
+}
+:focus-visible {
+  outline-color: var(--info);
+}
+::-webkit-scrollbar-track {
+  background: var(--canvas);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--info);
+  border-color: var(--canvas);
+}
+.nav,
+.hero {
+  position: relative;
+}
+.nav {
+  z-index: 2;
+}
+.hero {
+  isolation: isolate;
+}
+/* A single angular wash follows the open lid's perspective. It stays behind the product. */
+.hero::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+  top: -70px;
+  left: 0;
+  width: 63%;
+  height: 790px;
+  background: linear-gradient(145deg, #152b78 0%, #24133c 56%, #100e20 83%);
+  clip-path: polygon(0 14%, 76% 0, 100% 70%, 0 100%);
+}
+.hero .product-plate {
+  background: transparent;
+}
+.hero .product-plate > img {
+  filter: grayscale(0.82) brightness(1.18) contrast(1.05);
+}
+.hero-letter > p,
+.hero-assurance,
+.plate-caption p {
+  color: var(--text-muted);
+}
+.hero .plate-caption {
+  position: relative;
+}
+.caption-price strong {
+  color: var(--info);
+}
+.button {
+  background: var(--action);
+  color: var(--text);
+}
+.button.secondary,
+.decision-actions .secondary {
+  background: var(--surface-raised);
+  color: var(--text);
+}
+.study-tab {
+  color: var(--text-muted);
+  opacity: 1;
+}
+.study-tab[aria-selected="true"] {
+  color: var(--info);
+}
+.study-content,
+.worksheet,
+.questions details {
+  background: var(--surface);
+}
+.study-footnote,
+.spec-list dt,
+.spec-list dd span,
+.lighting-note,
+.budget-note,
+.budget-total p,
+.monthly span,
+.budget-calc > p,
+.letter-meta,
+.decision-local,
+.footer p {
+  color: var(--text-muted);
+}
+.roadmap strong,
+.grade-terms dt {
+  color: var(--info);
+}
+#ex {
+  background: var(--canvas);
+}
+.hardware-heading > p,
+#part-description {
+  color: var(--text-muted);
+}
+.showcase-caption,
+.story-instruction,
+.hardware-copy .showcase-insight {
+  color: var(--text-muted);
+}
+.hardware-tab {
+  color: var(--text-muted);
+}
+.hardware-tab[aria-pressed="true"] {
+  background: var(--action);
+  color: var(--text);
+}
+.stage-marker {
+  background: transparent;
+}
+#stage-feature,
+.showcase-source {
+  color: var(--info);
+}
+.story-progress {
+  background: var(--surface-raised);
+}
+.story-progress > span {
+  background: var(--info);
+}
+.product-view {
+  filter: grayscale(0.9) brightness(1.12);
+}
+.product-detail {
+  filter: grayscale(1);
+}
+.configs-band {
+  background: var(--surface);
+}
+.choice {
+  background: var(--canvas);
+  color: var(--text);
+}
+.choice[aria-pressed="true"] {
+  background: #1c2345;
+  outline: 2px solid var(--info);
+  outline-offset: -2px;
+}
+.choice[aria-pressed="true"]::after {
+  background: var(--info);
+}
+.choice .choice-price {
+  color: var(--info);
+}
+.spec-photo {
+  background: transparent;
+}
+.small-control,
+.configs-band .small-control,
+#ex .cooling .small-control,
+.discussion .small-control,
+.term {
+  background: var(--surface-raised);
+  color: var(--text);
+  border: 0;
+}
+.small-control[aria-pressed="true"],
+.configs-band .small-control[aria-pressed="true"],
+#ex .cooling .small-control[aria-pressed="true"],
+.discussion .small-control[aria-pressed="true"],
+.term[aria-pressed="true"] {
+  background: var(--action);
+  color: var(--text);
+}
+input[type="range"] {
+  accent-color: var(--info);
+}
+td.selected-col,
+th.selected-col {
+  background: var(--surface-raised);
+}
+.closing {
+  background: #151025;
+}
+.footer {
+  color: var(--text);
+}
+.brand,
+.questions summary,
+.comparison-details summary,
+.menu-toggle {
+  transition: color 180ms var(--ease);
+}
+@media (hover: hover) and (pointer: fine) {
+  .button:hover {
+    background: var(--action-hover);
+    color: var(--text);
+  }
+  .button.secondary:hover {
+    background: var(--mood);
+    color: var(--text);
+  }
+  .hardware-tab:hover,
+  .small-control:hover,
+  .term:hover {
+    background: #263057;
+    color: var(--text);
+  }
+  .hardware-tab[aria-pressed="true"]:hover,
+  .small-control[aria-pressed="true"]:hover,
+  .term[aria-pressed="true"]:hover {
+    background: var(--action-hover);
+  }
+  #ex .cooling .small-control:hover {
+    background: #263057;
+    color: var(--text);
+  }
+  #ex .cooling .small-control[aria-pressed="true"]:hover {
+    background: var(--action-hover);
+  }
+  .nav .brand:hover,
+  .footer .brand:hover,
+  .footer p a:hover,
+  .questions summary:hover,
+  .comparison-details summary:hover,
+  .menu-toggle:hover {
+    color: var(--info);
+  }
+}
+@media (max-width: 900px) {
+  .hero::before {
+    top: 80px;
+    width: 100%;
+    height: 590px;
+    clip-path: polygon(0 16%, 80% 0, 100% 80%, 0 100%);
+  }
+  .hero .product-plate {
+    background: transparent;
+  }
+  .study-tab {
+    background: var(--surface-raised);
+    color: var(--text-muted);
+  }
+  .study-tab[aria-selected="true"] {
+    background: var(--action);
+    color: var(--text);
+  }
+  .hardware-tab {
+    background: var(--surface-raised);
+  }
+  .hardware-tab[aria-pressed="true"] {
+    background: var(--action);
+  }
+}
+@media (max-width: 600px) {
+  .hero::before {
+    top: 110px;
+    height: 450px;
+    width: 100%;
+  }
+}
+@media print {
+  :root {
+    --canvas: #fff;
+    --surface: #f2f2f2;
+    --surface-raised: #e8e8e8;
+    --text: #111;
+    --text-muted: #444;
+    --action: #e0e0e0;
+    --action-hover: #d5d5d5;
+    --info: #222;
+    --mood: #eee;
+    --paper: #fff;
+    --ink: #000;
+    --gray: #eee;
+    --red: #222;
+    color-scheme: light;
+  }
+  body {
+    background: white;
+    color: black;
+  }
+  .hero::before {
+    display: none;
+  }
+  .hero-letter > p,
+  .plate-caption p,
+  .caption-price strong,
+  .roadmap strong,
+  .grade-terms dt,
+  .hardware-heading > p,
+  #part-description,
+  .showcase-caption,
+  .story-instruction,
+  .hardware-copy .showcase-insight,
+  #stage-feature,
+  .showcase-source,
+  .study-footnote,
+  .spec-list dt,
+  .spec-list dd span,
+  .lighting-note,
+  .budget-note,
+  .budget-total p,
+  .monthly span,
+  .budget-calc > p,
+  .letter-meta,
+  .decision-local,
+  .footer,
+  .footer p {
+    color: black;
+  }
+  #ex,
+  .configs-band,
+  .closing,
+  .study-content,
+  .worksheet,
+  .questions details {
+    background: white;
+    color: black;
+  }
+  .choice,
+  .choice[aria-pressed="true"] {
+    background: #f2f2f2;
+    color: #111;
+  }
+  .stage-marker {
+    background: white;
+  }
+}
